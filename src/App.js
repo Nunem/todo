@@ -23,6 +23,9 @@ export default class App extends Component {
     });
   }
 
+deleteHandler=(i) => {this.state.items.splice(i,1); this.forceUpdate();}
+
+
 
   render() {
     return (
@@ -32,7 +35,7 @@ export default class App extends Component {
           <button>Submit</button>
         </form>
 
-        <List items={this.state.items}/>
+        <List items={this.state.items} click={this.deleteHandler}/>
 
       </div>
     );
